@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="menu.html">
+    <link rel="stylesheet" href="control/css1.css">
+</head>
+<body>
+    <h1>Elioenai</h1>
+
+    <input type="button" value="Ativar Modo Escuro" id="asd1">
+    
+    <p>O modo Claro esta ativado</p>
+    <script>
+        var boto = document.getElementById("asd1");
+        var texto = document.querySelector("p");
+
+        boto.addEventListener("click",updateButton);
+
+        function updateButton () {
+            if (boto.value === "Ativar Modo Escuro"){
+                boto.value = "Ativar Modo Claro"; 
+                texto.textContent = "O modo Escuro está ativado"
+            }else{
+                boto.value = "Ativar Modo Escuro";
+                texto.textContent = "O modo Claro foi ativado";
+            }
+        }
+    </script>
+    
+    <h2>Insira Aqui seu peso (em Kg - Quilogramas)</h2>
+
+    <input type="text" data-js="massa">
+    
+    <h2> Insira Aqui sua altura(em cm - centimetros)</h2>
+
+    <input type="text" data-js="tamanho">
+
+    <p>Seu IMC é:</p><div data-js="saida"></div>
+    <br>
+    <input type="button" id="123a" value="Calcular">
+        <script>
+
+            document.getElementById("123a").addEventListener("click", exe, false);
+
+            function exe () {
+                var massa = document.querySelector('[data-js="massa"]').value;
+            
+                var tamanho = document.querySelector('[data-js="tamanho"]').value;
+
+                document.querySelector('[data-js="saida"]').innerHTML = calcular (massa, tamanho);
+            }
+
+            function calcular (massa, tamanho) {
+                var DECIMAL = 10;
+                var double = parseInt(tamanho) * parseInt(tamanho);
+                var calc = massa/double*10000;
+                var nande = "Por getileza, insira números nas duas lacunas";
+
+                if (isNaN(calc)){
+                    return nande; 
+                }else {
+                return calc;
+                };
+            };
+            
+        </script>
+   <a href="control/teste.html"><button>Acess to second page</button></a>
+</body>
+</html>

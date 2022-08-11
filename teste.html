@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Somar dois números</title>
+  <link rel="stylesheet" href="#">
+</head>
+<body>
+<h1>Preencher Cadastro de Acesso</h1>
+<h3>NOME COMPLETO</h3>
+<input type="text" value="Insert Your Name" style="color:darkgrey">
+<h3>FUNCTION IN THE BUSNESS</h3>
+<input type="text" value="Insert Your Function" style="color:darkgrey">
+<H3>INSERT YOUR CPF</H3>
+<input type="number" name="CPF number" id="zxc">
+<h3>INSERT YOUR PASSWORD</h3>
+<input type="password" name="Password" id="qwe">
+
+<input type="button" value="Gerar ID e Senha" id="asd">
+
+<hr>
+<div data-js="saida"></div>
+<hr>
+<script>
+  document.getElementById("asd").addEventListener("click",tentativa,false);
+  function tentativa(){  
+
+    var cpfnumber = document.getElementById("zxc").value;
+    var senha = document.getElementById("qwe").value;
+    var ponto = ".";
+
+    document.querySelector('[data-js="saida"]').innerHTML= exibir(cpfnumber, senha, ponto);
+  };
+
+  function exibir (cpfnumber, senha, ponto){
+    var qqq = "Seu nome de Usuário é seu CPF: ";
+    var aaa = " Sua Senha cadastrada é ";
+    var rrr = qqq + cpfnumber + aaa + senha + ponto;
+    return rrr;
+  };
+</script>
+<br>
+<p>Acesse agora a página incial: <a href="../menu.html"><input type="button" value="Acessar"></a></p>
+</body>
+</html>
